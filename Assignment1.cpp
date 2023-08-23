@@ -136,6 +136,94 @@ void swapNum(int &a, int &b){
 
 }
 
+class SimpCal{
+    protected:
+        float A, B;
+    public:
+        SimpCal(void){
+            // Default COnstructor
+        }
+        
+        void SetNums(float X, float Y){
+            A = X; B = Y;
+        }
+
+        void GetNums(void){
+            cout<<"The numbers you entered are "<<A<<" and "<<B<<endl;
+        }
+
+        float Sum(void){
+            return A + B;
+        }
+
+        float Substract(void){
+            return A - B;
+        }
+
+        float Multiply(void){
+            return A*B;
+        }
+
+        float Divide(void){
+            return A / B;
+        }
+};
+
+class ScientificCal{
+    protected:
+        float C, D;
+    public:
+        ScientificCal(void){
+            // Default COnstructor
+        }
+        
+        void SetNums(float X, float Y){
+            C = X; D = Y;
+        }
+
+        void GetNums(void){
+            cout<<"The numbers you entered are "<<C<<" and "<<D<<endl;
+        }
+
+        float Power(void){
+            float result = 1;
+            for (int i = 0; i < D; i++)
+            {
+                result = result * C;
+                // cout<<"Hello!";
+            }
+            return result;
+        }
+
+        float SRootA(void){
+            return (sqrt(C));
+        }
+
+        float SRootB(void){
+            return sqrt(D);
+        }
+
+        // float Sum(void){
+        //     return A + B;
+        // }
+};
+
+class HbdCalc : public ScientificCal, public SimpCal{
+    public:
+        HbdCalc(void){
+            // Default COnstructor
+        }
+
+        HbdCalc(int Y, int Z){
+            A = Y;
+            B = Z;
+            C = Y;
+            D = Z;
+        }
+
+};
+
+
 int main()
 {
     // identify('a');
